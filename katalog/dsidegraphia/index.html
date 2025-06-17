@@ -160,32 +160,6 @@ width: 100%;
         });
     </script>
     
-    
-    
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
-
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144220429-1"></script>
 <script>
@@ -216,6 +190,327 @@ function openFullscreen() {
 }
 </script>
 
+<!-- Floating Top Container -->
+<div class="whatsapp-float-top-container" onclick="window.open('https://goo.gl/maps/XYZ', '_blank')">
+    <div class="whatsapp-float" id="whatsappTopFloat">
+        <img id="topFloatIcon" src="https://i.imgur.com/RHbQRX3.png" alt="WhatsApp Icon" />
+    </div>
+    <span class="home-text" id="homeText">Mari Berkunjung</span>
+</div>
+<!-- Floating WhatsApp Card -->
+	
+<!-- Floating Button Container -->
+<div class="whatsapp-float-container" id="whatsappFloatContainer" onclick="toggleWhatsAppCard(event)">
+    <span class="help-text" id="helpText">Ada yang bisa kami bantu?<br /><b>Hubungi kami<b></b></b></span>
+    <div class="whatsapp-float" id="whatsappFloat">
+        <img id="floatIcon" src="https://ouch-cdn2.icons8.com/1oizdSHZL50V6Q9nrhAoQ1yymCfuay57pGsUUgpdOKo/rs:fit:456:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvOTY0/L2U0NTdjYWFlLWMy/MWUtNDU5Yi1iMzcy/LTQ4OWIwM2U5ZDgw/OC5wbmc.png" alt="WhatsApp Icon" />
+    </div>
+</div>
+<!-- Floating WhatsApp Card -->
+    
+<!-- Floating WhatsApp Card -->
+<div class="whatsapp-card" id="whatsappCard">
+<div class="whatsapp-header">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="https://ouch-cdn2.icons8.com/1oizdSHZL50V6Q9nrhAoQ1yymCfuay57pGsUUgpdOKo/rs:fit:456:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvOTY0/L2U0NTdjYWFlLWMy/MWUtNDU5Yi1iMzcy/LTQ4OWIwM2U5ZDgw/OC5wbmc.png" alt="WhatsApp Icon" />
+        Konsultasi Gratis!
+    </div>
+    <span class="whatsapp-close" onclick="closeWhatsAppCard(event)">&#10005;</span>
+</div>
+    <div class="whatsapp-content">
+        <p>Klik salah satu team kami untuk berkonsultasi via WhatsApp.</p>
+
+        <!-- Admin 1 -->
+        <div class="contact-box">
+            <img src="https://i.imgur.com/RHbQRX3.png" alt="WhatsApp Icon" />
+            <div class="contact-info">
+                <div>
+                    <span class="admin-name1">Admin</span><br />
+                    <span class="admin-description">Office D'Side Graphia</span>
+                </div>
+                <a href="https://wa.me/6287838333993?text=Hallo,%20*D'Side%20Graphia*%0ASaya%20mau%20konsultasi,%20bisa?" target="_blank">
+                    <img class="whatsapp-icon" src="https://ouch-cdn2.icons8.com/1oizdSHZL50V6Q9nrhAoQ1yymCfuay57pGsUUgpdOKo/rs:fit:456:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvOTY0/L2U0NTdjYWFlLWMy/MWUtNDU5Yi1iMzcy/LTQ4OWIwM2U5ZDgw/OC5wbmc.png" alt="WhatsApp Icon" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Admin 2 -->
+        <div class="contact-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjiu7YrDulEiHgcvyxUqfqUQkD6ZBPr6gCQ&amp;usqp=CAU" alt="WhatsApp Icon" />
+            <div class="contact-info">
+                <div>
+                    <span class="admin-name1">Customer Service</span><br />
+                    <span class="admin-description">Marketing Online</span>
+                </div>
+                <a href="https://wa.me/6285172288904?text=Hallo,%20*D'Side%20Graphia*%0ASaya%20mau%20konsultasi,%20bisa?" target="_blank">
+                    <img class="whatsapp-icon" src="https://ouch-cdn2.icons8.com/1oizdSHZL50V6Q9nrhAoQ1yymCfuay57pGsUUgpdOKo/rs:fit:456:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvOTY0/L2U0NTdjYWFlLWMy/MWUtNDU5Yi1iMzcy/LTQ4OWIwM2U5ZDgw/OC5wbmc.png" alt="WhatsApp Icon" />
+                </a>
+            </div>
+        </div>
+
+        <div class="powered-by">
+            <i>Powered By </i>: Digital Printing
+        </div>
+    </div>
+</div>
+
+<style>/* Floating button container */
+    .whatsapp-float-container {
+        position: fixed;
+        bottom: 30px;
+        right: 25px;
+        display: flex;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        z-index: 99; /* Pastikan z-index lebih rendah dari kartu */
+        transition: opacity 0.4s ease; /* Transisi untuk opacity */
+    }
+
+    /* Floating button */
+    .whatsapp-float {
+        color: white;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        font-size: 30px;
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-float img {
+        width: 45px;
+        height: 45px;
+        transition: transform 0.4s ease; /* Transition for icon rotation */
+    }
+
+    .whatsapp-float.hidden {
+        opacity: 0; /* Sembunyikan ikon dengan mengubah opacity */
+        pointer-events: none; /* Nonaktifkan interaksi saat tersembunyi */
+    }
+
+    .whatsapp-card {
+        position: fixed;
+        bottom: 30px;
+        right: 20px;
+        font-family: 'Poppins', sans-serif;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 320px;
+        opacity: 0;
+        transform: translateY(20px); /* Geser sedikit ke bawah */
+        z-index: 100; /* Pastikan z-index lebih tinggi */
+        transition: all 0.4s ease; /* Smooth transition */
+        display: none;
+    }
+
+    .whatsapp-card.active {
+        opacity: 1;
+        transform: translateY(0); /* Kembali ke posisi semula */
+    }
+
+    .whatsapp-header {
+        background-color: #075E54;
+        color: white;
+        padding: 15px;
+        border-radius: 8px 8px 0 0;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+    
+.whatsapp-header {
+    justify-content: space-between;
+}
+
+.whatsapp-close {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.whatsapp-close:hover {
+    transform: rotate(90deg);
+    color: #ddd;
+}
+
+    .whatsapp-header img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    .whatsapp-content {
+        padding: 10px;
+        text-align: left;
+    }
+
+    .whatsapp-content p {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #000;
+    }
+
+    .contact-box {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .contact-box img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        line-height:1.5;
+    }
+
+    .contact-info .admin-name1 {
+        font-weight: bold;
+        font-size: 16px;
+        color: #000;
+    }
+
+    .contact-info .admin-description {
+        font-size: 12px;
+        color: #000;
+    }
+
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+        align-items: center;
+    max-width: 40px; /* Ukuran maksimum */
+    max-height: 40px; /* Ukuran maksimum */
+    min-width: 40px; /* Ukuran minimum */
+    min-height: 40px; /* Ukuran minimum */
+    object-fit: cover; /* Pastikan gambar tidak terdistorsi */
+    color: #25D366; /* Warna ikon WhatsApp */
+}
+
+
+    .powered-by {
+        text-align: left;
+        font-size: 12px;
+        color: #000;
+        padding: 10px 5px;
+    }
+
+.help-text {
+    left: -5px; /* Memberikan jarak antara ikon dan teks */
+    font-size: 14px;
+    color: #333; /* Warna teks */
+    background-color: #f1f1f1; /* Warna latar belakang bubble */
+    border-radius: 10px; /* Sudut bulat untuk bubble */
+    padding: 10px; /* Padding dalam bubble */
+    display: block; /* Sembunyikan teks secara default */
+    position: relative; /* Untuk efek bubble */
+    white-space: nowrap; /* Mencegah teks membungkus */
+
+    /* Tambahkan animasi */
+    animation: waveBubble 1.5s ease-in-out infinite;
+}
+
+/* Definisi keyframes untuk animasi wave */
+@keyframes waveBubble {
+    0% {
+        transform: translateY(0); /* Posisi awal */
+    }
+    25% {
+        transform: translateY(-5px); /* Bergerak ke atas */
+    }
+    50% {
+        transform: translateY(0); /* Kembali ke posisi awal */
+    }
+    75% {
+        transform: translateY(5px); /* Bergerak ke bawah */
+    }
+    100% {
+        transform: translateY(0); /* Kembali ke posisi awal */
+    }
+}
+
+
+    .whatsapp-float.active + .help-text {
+        display: block; /* Tampilkan teks saat ikon aktif */
+    }
+
+.whatsapp-float-top-container {
+    position: fixed;
+    top: 30px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.whatsapp-float-top-container .whatsapp-float {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-float-top-container .whatsapp-float img {
+    width: 45px;
+    height: 45px;
+}
+
+/* Animasi untuk teks "Mari Berkunjung" */
+.home-text {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+    white-space: nowrap;
+    animation: pointRightLeft 1.5s ease-in-out infinite;
+}
+
+/* Keyframes: menunjuk ke kanan dan kiri */
+@keyframes pointRightLeft {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+</style>
+
+ <!-- Popup Whatsapp --> 
 <script>
     function toggleWhatsAppCard(event) {
         var card = document.getElementById("whatsappCard");
@@ -244,6 +539,22 @@ function openFullscreen() {
         event.stopPropagation(); // Mencegah event bubbling
     }
 
+function closeWhatsAppCard(event) {
+    event.stopPropagation(); // Cegah bubbling
+    var card = document.getElementById("whatsappCard");
+    var floatIcon = document.getElementById("floatIcon");
+    var floatContainer = document.getElementById("whatsappFloatContainer");
+    var helpText = document.getElementById("helpText");
+
+    card.classList.remove("active");
+    floatIcon.style.transform = "rotate(0deg)";
+    setTimeout(function() {
+        card.style.display = "none";
+        floatContainer.classList.remove("hidden");
+        helpText.style.display = "block";
+    }, 400);
+}
+
     // Menambahkan event listener untuk klik di luar card
     document.addEventListener('click', function(event) {
         var card = document.getElementById("whatsappCard");
@@ -262,7 +573,6 @@ function openFullscreen() {
             }, 400); // Sesuaikan dengan durasi transisi
         }
     });
-</script>     
+</script>
 </body>
 </html>
-
