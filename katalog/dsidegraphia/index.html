@@ -216,7 +216,53 @@ function openFullscreen() {
 }
 </script>
 
-     
+<script>
+    function toggleWhatsAppCard(event) {
+        var card = document.getElementById("whatsappCard");
+        var floatIcon = document.getElementById("floatIcon");
+        var floatContainer = document.getElementById("whatsappFloatContainer");
+        var helpText = document.getElementById("helpText");
+
+        if (card.style.display === "none" || card.style.display === "") {
+            card.style.display = "block";
+            floatContainer.classList.add("hidden"); // Sembunyikan ikon saat kartu terbuka
+            helpText.style.display = "none"; // Sembunyikan teks saat kartu terbuka
+            setTimeout(function() {
+                card.classList.add("active");
+                floatIcon.style.transform = "rotate(180deg)"; // Rotasi saat kartu muncul
+            }, 10);
+        } else {
+            card.classList.remove("active");
+            floatIcon.style.transform = "rotate(0deg)"; // Kembali ke posisi semula
+            setTimeout(function() {
+                card.style.display = "none";
+                floatContainer.classList.remove("hidden"); // Tampilkan ikon saat kartu tertutup
+                helpText.style.display = "block"; // Tampilkan teks saat kartu tertutup
+            }, 400); // Sesuaikan dengan durasi transisi
+        }
+
+        event.stopPropagation(); // Mencegah event bubbling
+    }
+
+    // Menambahkan event listener untuk klik di luar card
+    document.addEventListener('click', function(event) {
+        var card = document.getElementById("whatsappCard");
+        var floatButton = document.getElementById("whatsappFloat");
+        var floatContainer = document.getElementById("whatsappFloatContainer");
+        var helpText = document.getElementById("helpText");
+
+        // Mengecek apakah klik di luar card dan tombol
+        if (!card.contains(event.target) && !floatButton.contains(event.target) && card.style.display === "block") {
+            card.classList.remove("active");
+            floatIcon.style.transform = "rotate(0deg)"; // Kembali ke posisi semula
+            setTimeout(function() {
+                card.style.display = "none";
+                floatContainer.classList.remove("hidden"); // Tampilkan ikon saat kartu tertutup
+                helpText.style.display = "block"; // Tampilkan teks saat kartu tertutup
+            }, 400); // Sesuaikan dengan durasi transisi
+        }
+    });
+</script>     
 </body>
 </html>
 
