@@ -190,6 +190,15 @@ function openFullscreen() {
 }
 </script>
 
+<!-- Floating Top Container -->
+<div class="whatsapp-float-top-container" onclick="window.open('https://goo.gl/maps/XYZ', '_blank')">
+    <div class="whatsapp-float" id="whatsappTopFloat">
+        <img id="topFloatIcon" src="https://i.imgur.com/RHbQRX3.png" alt="WhatsApp Icon" />
+    </div>
+    <span class="home-text" id="homeText">Mari Berkunjung</span>
+</div>
+<!-- Floating WhatsApp Card -->
+	
 <!-- Floating Button Container -->
 <div class="whatsapp-float-container" id="whatsappFloatContainer" onclick="toggleWhatsAppCard(event)">
     <span class="help-text" id="helpText">Ada yang bisa kami bantu?<br /><b>Hubungi kami<b></b></b></span>
@@ -443,6 +452,62 @@ function openFullscreen() {
     .whatsapp-float.active + .help-text {
         display: block; /* Tampilkan teks saat ikon aktif */
     }
+
+.whatsapp-float-top-container {
+    position: fixed;
+    top: 30px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.whatsapp-float-top-container .whatsapp-float {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-float-top-container .whatsapp-float img {
+    width: 45px;
+    height: 45px;
+}
+
+/* Animasi untuk teks "Mari Berkunjung" */
+.home-text {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+    white-space: nowrap;
+    animation: pointRightLeft 1.5s ease-in-out infinite;
+}
+
+/* Keyframes: menunjuk ke kanan dan kiri */
+@keyframes pointRightLeft {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 </style>
 
  <!-- Popup Whatsapp --> 
@@ -511,3 +576,4 @@ function closeWhatsAppCard(event) {
 </script>
 </body>
 </html>
+
